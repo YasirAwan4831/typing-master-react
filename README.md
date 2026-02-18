@@ -23,6 +23,7 @@ git clone https://github.com/your-username/typing-master-react.git
 cd typing-master-react
 npm install
 npm run dev
+```
 
 ## 📁 Project Structure
 
