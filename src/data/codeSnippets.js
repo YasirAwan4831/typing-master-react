@@ -61,3 +61,4 @@ export const codeSnippets = [
   "const regex = /^[a-zA-Z0-9]+$/; const isValid = regex.test(input);"
 ];
 
+export default codeSnippets;
