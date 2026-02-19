@@ -14,7 +14,101 @@ export const calculateWPM = (correctChars, timeInMinutes) => {
   return Math.round(wordsTyped / timeInMinutes);
 };
 
+/**
+ * Calculate Characters Per Minute (CPM)
+ * @param {number} correctChars - Number of correct characters typed
+ * @param {number} timeInMinutes - Time elapsed in minutes
+ * @returns {number} - CPM value
+ */
+export const calculateCPM = (correctChars, timeInMinutes) => {
+  if (timeInMinutes <= 0) return 0;
+  return Math.round(correctChars / timeInMinutes);
+};
 
+/**
+ * Calculate Accuracy Percentage
+ * @param {number} correctChars - Number of correct characters
+ * @param {number} totalChars - Total characters typed
+ * @returns {number} - Accuracy percentage
+ */
+export const calculateAccuracy = (correctChars, totalChars) => {
+  if (totalChars === 0) return 100;
+  return Math.round((correctChars / totalChars) * 100);
+};
+
+/**
+ * Get performance level based on WPM
+ * @param {number} wpm - Words per minute
+ * @returns {object} - Performance level object
+ */
+export const getPerformanceLevel = (wpm) => {
+  for (const level of Object.values(PERFORMANCE_LEVELS)) {
+    if (wpm >= level.min && wpm <= level.max) {
+      return level;
+    }
+  }
+  return PERFORMANCE_LEVELS.BEGINNER;
+};
+
+/**
+ * Format time in seconds to MM:SS format
+ * @param {number} seconds - Time in seconds
+ * @returns {string} - Formatted time string
+ */
+export const formatTime = (seconds) => {
+  const mins = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+};
+
+/**
+ * Format date to readable string
+ * @param {string} dateString - ISO date string
+ * @returns {string} - Formatted date
+ */
+export const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+};
+
+/**
+ * Get random element from array
+ * @param {Array} array - Input array
+ * @returns {*} - Random element
+ */
+export const getRandomElement = (array) => {
+  return array[Math.floor(Math.random() * array.length)];
+};
+
+/**
+ * Shuffle array using Fisher-Yates algorithm
+ * @param {Array} array - Input array
+ * @returns {Array} - Shuffled array
+ */
+export const shuffleArray = (array) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
+/**
+ * Capitalize first letter of string
+ * @param {string} str - Input string
+ * @returns {string} - Capitalized string
+ */
+export const capitalize = (str) => {
+  if (!str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
 
 /**
  * Generate random number between min and max (inclusive)
