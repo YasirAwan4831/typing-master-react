@@ -141,3 +141,28 @@ export const UPDATE_INTERVALS = {
   TIMER_UPDATE: 100
 };
 
+// CSS Classes
+export const CSS_CLASSES = {
+  CHAR_CORRECT: 'correct',
+  CHAR_INCORRECT: 'incorrect',
+  CHAR_CURRENT: 'current',
+  CHAR_SPACE: 'space-char',
+  ACTIVE: 'active',
+  HIDDEN: 'hidden',
+  STARTED: 'started',
+  HAS_FOCUS: 'has-focus'
+};
+
+// Error Messages
+export const ERROR_MESSAGES = {
+  EMPTY_CUSTOM_TEXT: 'Please enter some text',
+  INVALID_TIME: 'Please enter a valid time between 10 and 300 seconds',
+  INVALID_WORDS: 'Please enter a valid word count between 5 and 500',
+  HISTORY_CLEAR_CONFIRM: 'Are you sure you want to clear all history?'
+};
+
+// Success Messages
+export const SUCCESS_MESSAGES = {
+  RESULT_COPIED: 'Results copied to clipboard!',
+  SETTINGS_SAVED: 'Settings saved successfully'
+};
