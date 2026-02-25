@@ -1,6 +1,7 @@
 // Theme Context Provider
 
-
+import React, { createContext, useContext } from 'react';
+import useTheme from '../hooks/useTheme';
 
 // Create Theme Context
 const ThemeContext = createContext(undefined);
