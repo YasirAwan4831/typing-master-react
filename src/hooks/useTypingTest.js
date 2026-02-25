@@ -307,6 +307,67 @@ const useTypingTest = (settings = {}, onComplete = null) => {
     };
   }, []);
 
-  
+  /**
+   * Get character status for display
+   */
+  const getCharStatus = useCallback((index) => {
+    if (index < typedText.length) {
+      return typedText[index] === currentText[index] ? 'correct' : 'incorrect';
+    }
+    if (index === currentPosition) {
+      return 'current';
+    }
+    return 'pending';
+  }, [typedText, currentText, currentPosition]);
+
+  return {
+    // Configuration
+    testMode,
+    setTestMode,
+    timeLimit,
+    setTimeLimit,
+    wordLimit,
+    setWordLimit,
+    textType,
+    setTextType,
+    customText,
+    setCustomText,
+
+    // Text
+    currentText,
+    typedText,
+    currentPosition,
+    generateNewText,
+
+    // State
+    isTestActive,
+    isPaused,
+    isTestComplete,
+
+    // Control
+    startTest,
+    pauseTest,
+    resumeTest,
+    stopTest,
+    resetTest,
+    completeTest,
+
+    // Input handlers
+    handleCharacterInput,
+    handleBackspace,
+
+    // Statistics
+    getCurrentStats,
+    getCharStatus,
+
+    // Raw stats
+    correctChars,
+    incorrectChars,
+    totalChars,
+    mistakes,
+    backspaceCount,
+    elapsedTime
+  };
+};
 
 export default useTypingTest;
