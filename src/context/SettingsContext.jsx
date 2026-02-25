@@ -1,4 +1,8 @@
+// Settings Context Provider
 
+import React, { createContext, useContext, useState, useCallback } from 'react';
+import useLocalStorage from '../hooks/useLocalStorage';
+import { STORAGE_KEYS, DEFAULT_SETTINGS } from '../utils/constants';
 
 // Create Settings Context
 const SettingsContext = createContext(undefined);
