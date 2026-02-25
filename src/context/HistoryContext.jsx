@@ -34,3 +34,4 @@ export const useHistoryContext = () => {
   return context;
 };
 
+export default HistoryContext;
