@@ -1,0 +1,114 @@
+/* Toggle Switch Styles */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.label {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.switch {
+  position: relative;
+  width: 50px;
+  height: 26px;
+  background: var(--border);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  flex-shrink: 0;
+}
+
+.switch:hover:not(.disabled) {
+  background: var(--text-muted);
+}
+
+.switch:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.switch.active {
+  background: var(--accent);
+}
+
+.switch.active:hover:not(.disabled) {
+  background: #0ea472;
+}
+
+.slider {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.switch.active .slider {
+  transform: translateX(24px);
+}
+
+/* Disabled State */
+.switch.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.container.disabled {
+  opacity: 0.6;
+}
+
+.container.disabled .label {
+  color: var(--text-muted);
+}
+
+/* Animation on mount */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.container {
+  animation: slideIn 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    gap: 0.75rem;
+  }
+
+  .label {
+    font-size: 0.9rem;
+  }
+
+  .switch {
+    width: 46px;
+    height: 24px;
+  }
+
+  .slider {
+    width: 18px;
+    height: 18px;
+  }
+
+  .switch.active .slider {
+    transform: translateX(22px);
+  }
+}
