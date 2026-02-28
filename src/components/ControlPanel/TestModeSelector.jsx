@@ -1,6 +1,10 @@
 // Test Mode Selector Component
 
-
+import React, { useState } from 'react';
+import { TEST_MODES, TIME_OPTIONS, WORD_COUNT_OPTIONS } from '../../utils/constants';
+import Button from '../Common/Button/Button';
+import Input from '../Common/Input/Input';
+import styles from './ControlPanel.module.css';
 
 /**
  * Test Mode Selector Component
