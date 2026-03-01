@@ -1,6 +1,10 @@
 // Typing Area Component
 
-
+import React from 'react';
+import StatsBar from './StatsBar';
+import TextDisplay from './TextDisplay';
+import ActionButtons from './ActionButtons';
+import styles from './TypingArea.module.css';
 
 /**
  * Typing Area Component
