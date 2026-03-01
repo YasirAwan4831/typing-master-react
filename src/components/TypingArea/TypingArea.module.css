@@ -1,1 +1,67 @@
 /* src/components/TypingArea/TypingArea.module.css */
+
+/* Typing Area Styles */
+
+.typingSection {
+  background: var(--bg-secondary);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px var(--shadow-lg);
+  border: 1px solid var(--border);
+  animation: fadeInUp 0.6s ease 0.2s both;
+  position: relative;
+  overflow: hidden;
+}
+
+.typingSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.typingSection.active::before {
+  animation: progressBar linear forwards;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progressBar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .typingSection {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .typingSection {
+    padding: 1.5rem 1.25rem;
+  }
+}
