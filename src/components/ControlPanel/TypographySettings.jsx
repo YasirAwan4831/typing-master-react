@@ -1,5 +1,8 @@
 // Typography Settings Component
 
+import React from 'react';
+import { FONT_SIZE_OPTIONS, FONT_FAMILY_OPTIONS } from '../../utils/constants';
+import styles from './ControlPanel.module.css';
 
 /**
  * Typography Settings Component
