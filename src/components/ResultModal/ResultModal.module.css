@@ -1,0 +1,135 @@
+/* Result Modal Styles */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modalOverlay.show {
+  display: flex;
+}
+
+.resultModal {
+  background: var(--bg-secondary);
+  border-radius: 32px;
+  padding: 3rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 64px var(--shadow-lg);
+  border: 1px solid var(--border);
+  animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.resultModal::-webkit-scrollbar {
+  display: none;
+}
+
+/* Header */
+.resultHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.resultTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.performanceBadge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: var(--accent);
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Actions */
+.resultActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.resultActions button {
+  flex: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .resultModal {
+    padding: 2rem;
+    width: 95%;
+  }
+
+  .resultTitle {
+    font-size: 2rem;
+  }
+
+  .resultActions {
+    flex-direction: column;
+  }
+
+  .resultActions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .resultModal {
+    padding: 1.5rem;
+  }
+
+  .resultTitle {
+    font-size: 1.75rem;
+  }
+
+  .performanceBadge {
+    font-size: 0.85rem;
+    padding: 0.4rem 1.25rem;
+  }
+}
