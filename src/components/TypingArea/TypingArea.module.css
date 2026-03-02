@@ -179,3 +179,257 @@
     font-size: 0.75rem;
   }
 }
+
+/* TypingArea.module.css */
+/* Typing Area Styles */
+
+.typingSection {
+  background: var(--bg-secondary);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px var(--shadow-lg);
+  border: 1px solid var(--border);
+  animation: fadeInUp 0.6s ease 0.2s both;
+  position: relative;
+  overflow: hidden;
+}
+
+.typingSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.typingSection.active::before {
+  animation: progressBar linear forwards;
+}
+
+/* Stats Bar */
+.statsBar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statValue {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+/* Text Display */
+.textDisplay {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.5rem;
+  line-height: 2.2;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  user-select: none;
+  letter-spacing: 0.02em;
+  position: relative;
+  min-height: 264px;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1.5rem;
+  background: var(--bg-primary);
+  border-radius: 16px;
+  border: 2px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  scroll-behavior: smooth;
+  outline: none;
+  cursor: text;
+  transition: all 0.3s ease;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.textDisplay::-webkit-scrollbar {
+  display: none;
+}
+
+.textDisplay:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+  background: var(--bg-secondary);
+}
+
+.textDisplay::before {
+  content: 'Click here to focus and start typing...';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-muted);
+  opacity: 0.5;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.textDisplay.hasFocus::before,
+.textDisplay.started::before {
+  opacity: 0;
+}
+
+/* Character Styles */
+.char {
+  position: relative;
+  transition: color 0.15s ease;
+}
+
+.spaceChar {
+  display: inline-block;
+  width: 0.5em;
+}
+
+.char.correct {
+  color: var(--accent);
+}
+
+.char.incorrect {
+  color: var(--error);
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 3px;
+}
+
+.char.current {
+  animation: none;
+  background: var(--primary);
+  color: white;
+  border-radius: 3px;
+  padding: 0 2px;
+  margin: 0 -2px;
+  position: relative;
+}
+
+.char.current::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: white;
+  animation: cursorBlink 1s infinite;
+}
+
+@keyframes cursorBlink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progressBar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .typingSection {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .statsBar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .statValue {
+    font-size: 1.5rem;
+  }
+
+  .textDisplay {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    padding: 1rem;
+    min-height: 216px;
+  }
+
+  .textDisplay::before {
+    font-size: 0.9rem;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .typingSection {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .statValue {
+    font-size: 1.25rem;
+  }
+
+  .statLabel {
+    font-size: 0.75rem;
+  }
+
+  .textDisplay {
+    font-size: 1rem;
+    min-height: 200px;
+  }
+}
