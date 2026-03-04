@@ -67,6 +67,45 @@
   margin-top: 0.5rem;
 }
 
+/* Stats Grid */
+.resultStats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.resultStat {
+  background: var(--bg-primary);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 2px solid var(--border);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.resultStat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--shadow);
+}
+
+.resultStatValue {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.resultStatLabel {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
 /* Actions */
 .resultActions {
   display: flex;
@@ -110,6 +149,19 @@
     font-size: 2rem;
   }
 
+  .resultStats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .resultStat {
+    padding: 1.25rem;
+  }
+
+  .resultStatValue {
+    font-size: 2rem;
+  }
+
   .resultActions {
     flex-direction: column;
   }
@@ -131,5 +183,13 @@
   .performanceBadge {
     font-size: 0.85rem;
     padding: 0.4rem 1.25rem;
+  }
+
+  .resultStatValue {
+    font-size: 1.75rem;
+  }
+
+  .resultStatLabel {
+    font-size: 0.8rem;
   }
 }
