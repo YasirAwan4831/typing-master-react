@@ -1,6 +1,7 @@
 // Result Stats Component
 
-
+import React from 'react';
+import styles from './ResultModal.module.css';
 
 /**
  * Result Stats Component
