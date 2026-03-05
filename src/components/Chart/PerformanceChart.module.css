@@ -1,0 +1,53 @@
+/* Performance Chart Styles */
+
+.chartContainer {
+  background: var(--bg-primary);
+  padding: 2rem;
+  border-radius: 16px;
+  margin-top: 2rem;
+  border: 1px solid var(--border);
+}
+
+.chartTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 1.5rem 0;
+}
+
+.canvas {
+  width: 100%;
+  height: 250px;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chartContainer {
+    padding: 1.5rem;
+  }
+
+  .chartTitle {
+    font-size: 1.1rem;
+  }
+
+  .canvas {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chartContainer {
+    padding: 1.25rem;
+  }
+
+  .chartTitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .canvas {
+    height: 180px;
+  }
+}
