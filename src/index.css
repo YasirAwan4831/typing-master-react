@@ -1,0 +1,28 @@
+/* Entry Point Styles */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+/* Import Global Styles */
+@import './styles/variables.css';
+@import './styles/animations.css';
+@import './styles/global.css';
+
+/* Root Element */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Body Reset */
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Code Blocks */
+code {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
