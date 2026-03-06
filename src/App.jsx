@@ -1,5 +1,24 @@
 // Main App Component
 
+import React, { useState, useEffect, useCallback } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
+import { SettingsProvider, useSettingsContext } from './context/SettingsContext';
+import { HistoryProvider, useHistoryContext } from './context/HistoryContext';
+import useTypingTest from './hooks/useTypingTest';
+import useSound from './hooks/useSound';
+import { formatResultForSharing } from './utils/helpers';
+import { SUCCESS_MESSAGES } from './utils/constants';
+
+// Components
+import Navbar from './components/Navbar/Navbar';
+import ControlPanel from './components/ControlPanel/ControlPanel';
+import TypingArea from './components/TypingArea/TypingArea';
+import ResultModal from './components/ResultModal/ResultModal';
+import History from './components/History/History';
+import PerformanceChart from './components/Chart/PerformanceChart';
+import Footer from './components/Footer/Footer';
+
+import styles from './App.module.css';
 
 /**
  * App Content Component (Inside Providers)
