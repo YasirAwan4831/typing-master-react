@@ -20,12 +20,12 @@ const Footer = () => {
         <p className={styles.developerInfo}>
           Designed and Developed by{' '}
           <a
-            href="https://muhammadmuzammil786.vercel.app/"
+            href="https://yasirawaninfo.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.developerLink}
           >
-            Muhammad Muzammil Shahzad
+            Muhammad   Yasir 
           </a>
         </p>
       </div>
