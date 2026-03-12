@@ -1,0 +1,137 @@
+# TypeMasterPro - Apache Configuration
+
+# ====================================
+# Enable Rewrite Engine
+# ====================================
+RewriteEngine On
+
+# ====================================
+# Force HTTPS (SSL)
+# ====================================
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ====================================
+# Force WWW or Non-WWW (choose one)
+# ====================================
+
+# Force WWW
+# RewriteCond %{HTTP_HOST} !^www\.
+# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+# Force Non-WWW (recommended for Vercel)
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# ====================================
+# SPA (Single Page Application) Routing
+# ====================================
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+RewriteRule ^ - [L]
+RewriteRule ^ /index.html [L]
+
+# ====================================
+# Security Headers
+# ====================================
+<IfModule mod_headers.c>
+  # Prevent clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+  
+  # XSS Protection
+  Header always set X-XSS-Protection "1; mode=block"
+  
+  # Prevent MIME type sniffing
+  Header always set X-Content-Type-Options "nosniff"
+  
+  # Referrer Policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  
+  # Content Security Policy (adjust as needed)
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'"
+</IfModule>
+
+# ====================================
+# Compression (Gzip)
+# ====================================
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ====================================
+# Browser Caching
+# ====================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Images
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  
+  # CSS and JavaScript
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  
+  # Fonts
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  
+  # HTML
+  ExpiresByType text/html "access plus 0 seconds"
+  
+  # Manifest
+  ExpiresByType application/manifest+json "access plus 1 week"
+</IfModule>
+
+# ====================================
+# File Access Protection
+# ====================================
+
+# Protect .htaccess
+<Files .htaccess>
+  Order allow,deny
+  Deny from all
+</Files>
+
+# Protect configuration files
+<FilesMatch "\.(json|xml|config|log)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# ====================================
+# Custom Error Pages (optional)
+# ====================================
+# ErrorDocument 404 /404.html
+# ErrorDocument 500 /500.html
+```
+
+---
+
+### **3. public/_redirects** (Netlify/Vercel کے لیے)
+```
+# TypeMasterPro - Redirects Configuration
+
+# SPA fallback
+/*    /index.html   200
+
+# Force HTTPS
+http://typemasterpro.vercel.app/*  https://typemasterpro.vercel.app/:splat  301!
+
+# Custom redirects (examples)
+# /old-url  /new-url  301
+# /blog/*   /articles/:splat  301
