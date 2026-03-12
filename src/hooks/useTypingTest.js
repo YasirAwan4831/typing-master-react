@@ -2,9 +2,9 @@
 
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { generateText } from '../utils/textGenerator';
-import { 
-  calculateWPM, 
-  calculateCPM, 
+import {
+  calculateWPM,
+  calculateCPM,
   calculateAccuracy,
   getPerformanceLevel,
   msToSeconds,
@@ -25,6 +25,18 @@ const useTypingTest = (settings = {}, onComplete = null) => {
   const [wordLimit, setWordLimit] = useState(settings.wordLimit || 10);
   const [textType, setTextType] = useState(settings.textType || 'words');
   const [customText, setCustomText] = useState(settings.customText || '');
+
+  // Refs for callbacks and settings to avoid dependency loops
+  const onCompleteRef = useRef(onComplete);
+  const settingsRef = useRef(settings);
+
+  useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
+
+  useEffect(() => {
+    settingsRef.current = settings;
+  }, [settings]);
 
   // Test State
   const [currentText, setCurrentText] = useState('');
@@ -50,15 +62,17 @@ const useTypingTest = (settings = {}, onComplete = null) => {
    * Generate new text for typing
    */
   const generateNewText = useCallback(() => {
+    console.log("generateNewText called. testMode:", testMode, "wordLimit:", wordLimit, "textType:", textType);
     const wordCount = testMode === TEST_MODES.WORDS ? wordLimit : 100;
-    const text = generateText(textType, wordCount, settings, customText);
+    const text = generateText(textType, wordCount, settingsRef.current, customText);
     setCurrentText(text);
-  }, [testMode, wordLimit, textType, settings, customText]);
+  }, [testMode, wordLimit, textType, customText]);
 
   /**
    * Initialize test
    */
   useEffect(() => {
+    console.log("useEffect: generateNewText fired");
     generateNewText();
   }, [generateNewText]);
 
@@ -170,7 +184,7 @@ const useTypingTest = (settings = {}, onComplete = null) => {
 
     setBackspaceCount(prev => prev + 1);
     setCurrentPosition(prev => prev - 1);
-    
+
     const newTypedText = typedText.slice(0, -1);
     setTypedText(newTypedText);
 
@@ -203,8 +217,8 @@ const useTypingTest = (settings = {}, onComplete = null) => {
     const cpm = calculateCPM(correctChars, timeInMinutes);
     const accuracy = calculateAccuracy(correctChars, totalChars);
     const timeInSeconds = msToSeconds(elapsedTime);
-    const timeLeft = testMode === TEST_MODES.TIME 
-      ? Math.max(0, timeLimit - timeInSeconds) 
+    const timeLeft = testMode === TEST_MODES.TIME
+      ? Math.max(0, timeLimit - timeInSeconds)
       : null;
 
     return {
@@ -250,17 +264,18 @@ const useTypingTest = (settings = {}, onComplete = null) => {
       textType
     };
 
-    if (onComplete) {
-      onComplete(result);
+    if (onCompleteRef.current) {
+      onCompleteRef.current(result);
     }
 
     return result;
-  }, [stopTest, getCurrentStats, testMode, textType, onComplete]);
+  }, [stopTest, getCurrentStats, testMode, textType]);
 
   /**
    * Check if test should complete
    */
   useEffect(() => {
+    console.log("useEffect: Check if test should complete fired. isTestActive:", isTestActive, "isPaused:", isPaused);
     if (!isTestActive || isPaused) return;
 
     let shouldComplete = false;
