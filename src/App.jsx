@@ -1,6 +1,6 @@
 // Main App Component
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import { SettingsProvider, useSettingsContext } from './context/SettingsContext';
 import { HistoryProvider, useHistoryContext } from './context/HistoryContext';
@@ -27,15 +27,19 @@ const AppContent = () => {
   const { settings, toggleSetting, updateSetting } = useSettingsContext();
   const { history, addResult, clearHistory } = useHistoryContext();
 
+  // Initialize typing test configuration
+  const initialConfig = useMemo(() => ({
+    testMode: 'time',
+    timeLimit: 30,
+    wordLimit: 10,
+    textType: 'words',
+    customText: '',
+    ...settings
+  }), [settings]);
+
   // Initialize typing test
   const typingTest = useTypingTest(
-    {
-      testMode: 'time',
-      timeLimit: 30,
-      wordLimit: 10,
-      textType: 'words',
-      customText: ''
-    },
+    initialConfig,
     handleTestComplete
   );
 
@@ -107,7 +111,7 @@ const AppContent = () => {
   const handleShareResult = async (result) => {
     const text = formatResultForSharing(result);
     const success = await navigator.clipboard.writeText(text);
-    
+
     if (success) {
       alert(SUCCESS_MESSAGES.RESULT_COPIED);
     } else {
@@ -159,7 +163,7 @@ const AppContent = () => {
   // Handle setting toggle
   const handleSettingToggle = (key) => {
     toggleSetting(key);
-    
+
     // If toggling settings that affect text generation, restart test
     if (['punctuation', 'numbers', 'capitals'].includes(key)) {
       typingTest.resetTest();
