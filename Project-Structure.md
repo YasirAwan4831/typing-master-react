@@ -3,9 +3,11 @@
 ```
 typing-master/
 ├─ public/
+│  ├─ .htaccess
 │  ├─ favicon.jpeg
-│  ├─ index.html
-│  └─ manifest.json
+│  ├─ manifest.json
+│  ├─ robots.txt
+│  └─ sitemap.xml
 ├─ src/
 │  ├─ components/
 │  │  ├─ Chart/
@@ -87,11 +89,13 @@ typing-master/
 │  ├─ App.jsx
 │  ├─ App.module.css
 │  ├─ index.css
-│  └─ index.js
+│  └─ index.jsx
 ├─ .gitignore
+├─ index.html
 ├─ LICENSE
 ├─ package-lock.json
 ├─ package.json
 ├─ Project-Structure.md
-└─ README.md
+├─ README.md
+└─ vercel.json
 ```
