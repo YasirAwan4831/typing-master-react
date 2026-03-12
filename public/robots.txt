@@ -1,0 +1,155 @@
+# robots.txt for TypeMasterPro - Professional Typing Speed Test
+# https://typemasterpro.vercel.app
+
+# ====================================
+# Allow all search engines
+# ====================================
+
+User-agent: *
+Allow: /
+
+# ====================================
+# Crawl delay (optional - for politeness)
+# ====================================
+
+Crawl-delay: 1
+
+# ====================================
+# Specific directives for major search engines
+# ====================================
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Google Images
+User-agent: Googlebot-Image
+Allow: /
+
+# Google Mobile
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Yandex
+User-agent: Yandex
+Allow: /
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+
+# ====================================
+# Block access to specific directories/files
+# ====================================
+
+# Disallow private or sensitive directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Disallow specific file types
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.log$
+Disallow: /*.config$
+
+# ====================================
+# Allow important resources
+# ====================================
+
+# Allow CSS, JS, and images for proper rendering
+Allow: /assets/*.css$
+Allow: /assets/*.js$
+Allow: /assets/*.png$
+Allow: /assets/*.jpg$
+Allow: /assets/*.jpeg$
+Allow: /assets/*.gif$
+Allow: /assets/*.svg$
+Allow: /assets/*.webp$
+
+# Allow fonts
+Allow: /fonts/
+Allow: /*.woff$
+Allow: /*.woff2$
+Allow: /*.ttf$
+Allow: /*.eot$
+
+# ====================================
+# Block bad bots and scrapers
+# ====================================
+
+# Block spam bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MauiBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+# Block AI scrapers (optional - if you don't want AI training on your content)
+User-agent: CCBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+# ====================================
+# Sitemap location
+# ====================================
+
+Sitemap: 
+Sitemap: 
+
+# ====================================
+# Additional Information
+# ====================================
+
+# Host (preferred domain)
+Host: 
+# Last updated: 2026-03-12
+# Contact: my3154831409@gmail.com
+# Project: TypeMasterPro - Professional Typing Speed Test
+# Developer: Muhammad Yasir 
+# Website: https://yasirawaninfo.vercel.app/
