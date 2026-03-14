@@ -4,13 +4,13 @@
   "version": "1.0.0",
   "type": "module",
   "description": "Professional Typing Speed Test Application built with React and Vite",
-  "author": "Muhammad Muzammil Shahzad",
+  "author": "Muhammad Yasir ",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+  "dev": "vite",
+  "build": "vite build",
+  "lint": "eslint .",
+  "preview": "vite preview"
+},
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
