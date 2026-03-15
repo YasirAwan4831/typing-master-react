@@ -13,9 +13,9 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](http://makeapullrequest.com)
 [![Maintenance](https://img.shields.io/badge/Maintained-Yes-green.svg?style=for-the-badge)](https://github.com/your-username/typemasterpro/graphs/commit-activity)
 
-![TypeMasterPro Banner](https://via.placeholder.com/1200x400/2563eb/ffffff?text=TypeMasterPro+-+Professional+Typing+Speed+Test)
+!![TypeMasterPro Banner](screenshots/Banner2.jpg)
 
-**[Live Demo](https://typemasterpro.vercel.app)** • **[Report Bug](https://github.com/your-username/typemasterpro/issues)** • **[Request Feature](https://github.com/your-username/typemasterpro/issues)**
+**[Live Demo](https://typing-master-react-tau.vercel.app/)** • **[Report Bug](https://github.com/YasirAwan4831/typing-master-react)** • **[Request Feature](https://github.com/YasirAwan4831/typing-master-react)**
 
 </div>
 
@@ -44,44 +44,44 @@
 
 | Feature | Description |
 |---------|-------------|
-| ⚡ **Real-time Testing** | Live WPM, CPM, and accuracy tracking |
-| 📊 **Performance Analytics** | Beautiful charts showing your progress |
-| 🎨 **Dark/Light Theme** | Eye-friendly themes for day and night |
-| 📱 **Responsive Design** | Works seamlessly on all devices |
-| 🎯 **Multiple Test Modes** | Time-based, word-based, and custom modes |
-| 📚 **Diverse Content** | Random words, sentences, paragraphs, and code |
-| 🔊 **Sound Effects** | Optional audio feedback for keystrokes |
-| 💾 **Local Storage** | Your progress is saved automatically |
-| 📈 **History Tracking** | Review your past test results |
-| ⌨️ **Custom Text** | Practice with your own content |
-| 🎭 **Typography Options** | Multiple fonts and sizes available |
-| 🏆 **Performance Levels** | From Beginner to Pro rankings |
+|  **Real-time Testing** | Live WPM, CPM and accuracy tracking |
+|  **Performance Analytics** | Beautiful charts showing your progress |
+|  **Dark/Light Theme** | Eye-friendly themes for day and night |
+|  **Responsive Design** | Works seamlessly on all devices |
+|  **Multiple Test Modes** | Time-based, word-based, and custom modes |
+|  **Diverse Content** | Random words, sentences, paragraphs, and code |
+|  **Sound Effects** | Optional audio feedback for keystrokes |
+|  **Local Storage** | Your progress is saved automatically |
+|  **History Tracking** | Review your past test results |
+| ⌨ **Custom Text** | Practice with your own content |
+|  **Typography Options** | Multiple fonts and sizes available |
+|  **Performance Levels** | From Beginner to Pro rankings |
 
 </div>
 
 ---
 
-## 🎯 Demo
+##  Demo
 
 <div align="center">
 
 ### 🖥️ Desktop View
 
-![Desktop Demo](https://via.placeholder.com/800x450/f8fafc/2563eb?text=Desktop+Screenshot)
+![TypeMasterPro Banner](screenshots/bannerjpg.jpg)
 
 ### 📱 Mobile View
 
-![Mobile Demo](https://via.placeholder.com/375x667/f8fafc/2563eb?text=Mobile+Screenshot)
+![TypeMasterPro Banner](screenshots/mobile.jpg)
 
-### 📊 Performance Chart
+### 📊 Tablait
 
-![Chart Demo](https://via.placeholder.com/800x400/f8fafc/10b981?text=Performance+Chart)
+![TypeMasterPro Banner](screenshots/tablit.jpg)
 
 </div>
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -111,7 +111,7 @@ npm run preview
 
 ### 🌐 Environment Variables
 
-Create a `.env` file in the root directory (if needed):
+Create a `.env` file in the root directory:
 ```env
 VITE_APP_NAME=TypeMasterPro
 VITE_APP_VERSION=1.0.0
@@ -153,7 +153,7 @@ VITE_APP_VERSION=1.0.0
 
 ## 📁 Project Structure
 ```
-typemasterpro/
+typing-master-react/
 ├─ 📂 public/                    # Static assets
 │  ├─ .htaccess                  # Apache configuration
 │  ├─ favicon.ico                # App icon
@@ -161,7 +161,6 @@ typemasterpro/
 │  ├─ manifest.json              # PWA manifest
 │  ├─ robots.txt                 # SEO crawler instructions
 │  ├─ sitemap.xml                # SEO sitemap
-│  └─ vercel.json                # Vercel configuration
 │
 ├─ 📂 src/                       # Source code
 │  ├─ 📂 components/             # React components
@@ -227,6 +226,7 @@ typemasterpro/
 ###  Theme Customization
 
 Edit `src/styles/variables.css` to customize colors:
+
 ```css
 :root {
   --primary: #2563eb;      /* Primary color */
@@ -234,6 +234,7 @@ Edit `src/styles/variables.css` to customize colors:
   --bg-primary: #f8fafc;   /* Background */
   --text-primary: #0f172a; /* Text color */
 }
+
 ```
 
 ###  Performance Settings
@@ -246,6 +247,7 @@ export const TYPING_STATS = {
   CHARS_PER_WORD: 5,
   MAX_HISTORY_SAVED: 50
 };
+
 ```
 
 ---
@@ -253,23 +255,27 @@ export const TYPING_STATS = {
 ##  Customization
 
 ### Adding New Text Types
-
+```
 1. Add data to `src/data/` folder
 2. Update `textGenerator.js`
 3. Add option in `TextTypeSelector.jsx`
-
+```
 ### Creating Custom Themes
 
+```
 1. Define colors in `variables.css`
 2. Add theme toggle logic in `ThemeContext.jsx`
 3. Update theme switcher UI
+```
 
 ### Adding New Languages
 
+```
 1. Create translation files
 2. Implement i18n support
 3. Update text data with translations
 
+```
 ---
 
 ## 📊 Performance
@@ -279,13 +285,11 @@ export const TYPING_STATS = {
 | Metric | Score |
 |--------|-------|
 |  **Performance** | 98/100 |
-|  **Accessibility** | 100/100 |
+|  **Accessibility** | 82/100 |
 |  **Best Practices** | 100/100 |
 |  **SEO** | 100/100 |
-
-![Lighthouse Score](https://img.shields.io/badge/Lighthouse-98%2F100-success?style=for-the-badge&logo=lighthouse)
-
 </div>
+---
 
 ### Optimization Features
 
@@ -300,8 +304,6 @@ export const TYPING_STATS = {
 ---
 
 ## 🤝 Contributing
-
-Contributions are what make the open-source community amazing! Any contributions you make are **greatly appreciated**.
 
 ### How to Contribute
 
@@ -383,7 +385,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ### 💙 If you found this project helpful, please consider giving it a ⭐!
 
-**Made with ❤️ by Muhammad Yasir**
+**Made with by Muhammad Yasir**
 
  **Web** https://yasirawaninfo.vercel.app/
 
@@ -397,4 +399,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 **[⬆ Back to Top](#️-typemasterpro)**
 
 </div>
+
+
 
