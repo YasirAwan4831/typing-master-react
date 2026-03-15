@@ -229,14 +229,14 @@ export const copyToClipboard = async (text) => {
  */
 export const formatResultForSharing = (result) => {
   return `
-TypeMaster Results 🎯
+TypeMaster Results 
 
 WPM: ${result.wpm}
 CPM: ${result.cpm}
 Accuracy: ${result.accuracy}%
 Performance: ${result.performance}
 
-Try it yourself at typemasterpro.vercel.app!
+Try it yourself at typing-master-react-tau.vercel.app!
   `.trim();
 };
 
