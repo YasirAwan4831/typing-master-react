@@ -359,7 +359,9 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ## 👨‍💻 Author
 
 <div align="center">
-
+<div align="center">
+  <img src="https://avatars.githubusercontent.com/u/223332147?v=4" width="150" style="border-radius:50%" />
+  
 ### Muhammad  Yasir 
 
 **Full Stack Developer | React Enthusiast | UI/UX Designer**
