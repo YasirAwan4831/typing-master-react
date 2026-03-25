@@ -75,7 +75,7 @@
 
 ### 📊 Tablait
 
-![TypeMasterPro Banner](screenshots/tablit.jpg)
+![TypeMasterPro Banner](![alt text](image.png))
 
 </div>
 
