@@ -14,8 +14,8 @@
 [![Maintenance](https://img.shields.io/badge/Maintained-Yes-green.svg?style=for-the-badge)](https://github.com/your-username/typemasterpro/graphs/commit-activity)
 
 !![TypeMasterPro Banner](screenshots/Banner2.jpg)
+**[Live Demo](https://typing-master-react-tau.vercel.app/)** • **[Report Bug](https://github.com/YasirAwan4831/typing-master-react)** • **[Request Feature](https://github.com/YasirAwan4831/typing-master-react)** • **[ Video Explanation](https://youtu.be/LMQIfsonc6s?si=3o7vWJajz927g9Ob)**
 
-**[Live Demo](https://typing-master-react-tau.vercel.app/)** • **[Report Bug](https://github.com/YasirAwan4831/typing-master-react)** • **[Request Feature](https://github.com/YasirAwan4831/typing-master-react)**
 
 </div>
 
@@ -80,7 +80,24 @@
 </div>
 
 ---
+## 🎥 Tutorials & Articles
 
+Want to understand how this project works behind the scenes?
+Check out these detailed video explanations and posts 👇
+
+* ▶️ **YouTube Walkthrough**
+  https://youtu.be/LMQIfsonc6s?si=3o7vWJajz927g9Ob
+
+* 💼 **LinkedIn Post (Project Breakdown)**
+  https://www.linkedin.com/posts/yasirawan4831_react-vite-webdevelopment-activity-7442596884650803202--8yL
+
+* ✍️ **Articles / Blogs** *(Coming Soon)*
+  I’ll be sharing in-depth articles about architecture, performance and design decisions.
+
+---
+
+
+---
 ##  Quick Start
 
 ### Prerequisites
