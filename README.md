@@ -91,8 +91,24 @@ Check out these detailed video explanations and posts 👇
 * 💼 **LinkedIn Post (Project Breakdown)**
   https://www.linkedin.com/posts/yasirawan4831_react-vite-webdevelopment-activity-7442596884650803202--8yL
 
-* ✍️ **Articles / Blogs** *(Coming Soon)*
-  I’ll be sharing in-depth articles about architecture, performance and design decisions.
+* ✍️ **Articles / Blogs**
+
+**Medium**
+https://medium.com/@YasirAwan4831/typing-master-web-app-react-vite-full-project-breakdown-ba12675a1fca
+
+**Dev.to**
+https://dev.to/yasirawan4831/typing-master-web-app-react-vite-full-project-breakdown-bm6
+
+**Hashnode**
+https://futuristic-links-dashboard.hashnode.dev/typing-master-web-app-react-vite-full-project-breakdown
+
+**CoderLegion**
+https://coderlegion.com/13518/typing-master-web-app-react-vite-full-project-breakdown
+
+**Substack**
+https://open.substack.com/pub/yasirwaninfo/p/typing-master-web-app-react-vite?utm_campaign=post-expanded-share&utm_medium=post%20viewer
+
+
 
 ---
 
