@@ -148,6 +148,8 @@ typing-master/
 ## 👨‍💻 Author
 
 <div align="center">
+<img src="https://avatars.githubusercontent.com/u/223332147?v=4" width="100" style="border-radius:50%"/>
+
 
 ### Muhammad  Yasir 
 
